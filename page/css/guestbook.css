@@ -1,0 +1,35 @@
+.intro{
+    width: 100%;
+    background: white;
+    box-sizing: border-box;
+    padding: 20px 15px 20px 20px;
+    text-align: left;
+    box-shadow:3px 4px 5px #888888;
+    border-radius: 10px;
+}
+.intro p{
+    padding:8px 0;
+}
+.blog-comments{
+    width: 100%;
+    /*background: pink;*/
+    margin-top: 30px;
+    text-align: left;
+
+}
+.blog-comment-msg{
+    display: inline-block;
+    margin: 20px 0px 10px 30px;
+    font-weight: bold;
+}
+.blog-comment{
+    margin: 0px 0 10px 0px;
+    border: 1px dashed #7ca4c1;
+    padding: 10px 0 10px 20px;
+    background: #d9edf7;
+    border-radius: 5px;
+    box-shadow: -3px 4px 5px #d9cdf7;
+}
+.blog-comment div{
+    padding: 10px 0 10px 0;
+}

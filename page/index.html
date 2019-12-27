@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./js/axios.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <a href="" class="title">我的个人博客  | 技术博客</a>
+            <div class="search">
+                <input type="text" placeholder="请输入内容">
+                <button>搜索</button>
+            </div>
+            <ul class="nav">
+                <li><a href="">首页</a></li>
+                <li><a href="sitemap.html">地图</a></li>
+                <li><a href="about.html">关于</a></li>
+                <li><a href="guestbook.html">留言</a></li>
+            </ul>
+
+        </div>
+
+    </div>
+    <div class="content">
+        <div class="content-left">
+            <div class="every-day" id="every-day-statement">
+                <span class="every" >每日一句</span>
+                <span>🔈</span>
+                <p v-html="getContent">sjafaognganggangg</p>
+<!--                <p>————看到卡卡卡</p>-->
+            </div>
+            <div class="article-list" id="article-list">
+                <div class="article" v-for="article in articleList">
+                    <div class="article-title"><a :href="article.link">{{article.title}}</a></div>
+                    <p class="article-content">{{article.content}}</p>
+                    <p class="article-footer">发布于{{article.date}} | 浏览({{article.views}}) | tags : {{article.tags}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="content-right">
+            <div class="right-module" id="random-tags" >
+                <div class="random-tags" >随街标签云</div>
+                <a href="" v-for="tag in tags" :style="{color:randomColor(),fontSize:randomSize}">{{tag}} &nbsp;</a>
+
+            </div>
+            <div class="right-module" id="new-hot">
+                <div class="random-tags">最近热门</div>
+                <div v-for="newHot in newHots"><a :href="newHot.link" >{{newHot.title}}</a></div>
+
+            </div>
+            <div class="right-module" id="new-comment">
+                <div class="random-tags">最新评论</div>
+                <ul>
+                    <li v-for="newCon in newComments">
+                        <div class="user-name">
+                            <span>{{newCon.name}}</span>
+                            <span class="comm-time">{{newCon.date}}</span>
+                        </div>
+                        <div class="user-comments">{{newCon.content}}</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="right-module">
+                <div class="random-tags">友情链接</div>
+                <span class="link"><a href="">请点击这里</a></span>
+                <span class="link"><a href="">请点击这里</a></span>
+                <span class="link"><a href="">请点击这里</a></span>
+                <span class="link"><a href="">请点击这里</a></span>
+                <span class="link"><a href="">请点击这里</a></span>
+                <span class="link"><a href="">请点击这里</a></span>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <ul>
+            <li>友情</li>
+            <li>友情</li>
+            <li>友情</li>
+            <li>友情</li>
+            <li>友情</li>
+            <li>友情</li>
+            <li>友情</li>
+            <li>友情</li>
+            <li>友情</li>
+        </ul>
+        <p>@2020-2-20 内容由作者及游客提供</p>
+    </div>
+
+<!--    <script src="./js/vue.js"></script>-->
+    <script src="./js/index.js"></script>
+</body>
+</html>
