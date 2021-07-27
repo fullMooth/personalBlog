@@ -36,7 +36,8 @@
                 data:content,
                 success:function (response) {
                     let result = JSON.parse(response)
-                    alert(result.msg)
+                    alert(result.msg);
+                    $('#editor').html("");
                 },
                 error:function(error){
                     console.log("error");

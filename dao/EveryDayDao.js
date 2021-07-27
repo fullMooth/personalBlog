@@ -25,7 +25,7 @@ function queryEveryDay(success){
     connection.connect();
     connection.query(sql,params,function (error,result) {
         if(error == null){
-            console.log(result);
+            // console.log(result);
             success(result)
         }else{
             console.log(error)

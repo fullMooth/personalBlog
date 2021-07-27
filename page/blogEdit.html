@@ -30,19 +30,24 @@
     <script>
         function submit(){
             var content = $('#editor').html();
-            var title = $('#title').html();
-            var tags = $('#tags').html();
+            var title = $('#title').val();
+            var tags = $('#tags').val();
             $.ajax({
                 url:"/editBlog?title=" + title + "&tags=" + tags  ,
                 method:"post",
                 data:content,
-                success:function(result){
-                    console.log(result);
+                success:function(res){
+                    let result = JSON.parse(res);
+                    alert(result.msg);
+                    $('#editor').html("");
+                    $('#title').val("");
+                    $('#tags').val("");
                 },
                 error:function(error){
                     console.log(error);
                 }
             })
+
         }
     </script>
 </head>
@@ -51,7 +56,7 @@
     <div class="container" style="width: 60%; ">
     <h1>文章编辑</h1>
     <input type="text" placeholder="请输入标题" id="title">
-    <input type="text" placeholder="请输入标签，用逗号隔开" id="#tags">
+    <input type="text" placeholder="请输入标签，用逗号隔开" id="tags">
      <div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
         <div class="btn-group">
             <a class="btn dropdown-toggle" data-toggle="dropdown" title="Font"><i class="icon-font"></i><b class="caret"></b></a>

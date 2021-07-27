@@ -4,20 +4,24 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="./css/sitemap.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./js/axios.js"></script>
 </head>
 <body>
-    <div class="wrapper">
+    <div class="wrapper" id="blog-map">
         <div class="title">个人博客’ S sideMap</div>
         <div class="link"><a href="index.html">博客首页</a> >> 站点地图</div>
         <div class="new-article">
-            <span class="new-title">最新文章</span>
+            <span class="new-title">{{newestBlog}}</span>
             <ul>
-                <li><a href="/">>>教师帐户无线密码初始化为8888</a></li>
-                <li><a href="/">>>教师帐户无线密码初始化为8888</a></li>
-                <li><a href="/">>>教师帐户无线密码初始化为8888</a></li>
+                <li v-for="(item,index) in bloglist" :key="index">
+                    <a :href="item.links">{{item.title}}</a>
+                </li>
+
 
             </ul>
         </div>
     </div>
+    <script src="./js/siteMap.js"></script>
 </body>
 </html>

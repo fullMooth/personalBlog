@@ -2,46 +2,72 @@
 .blog-discript{
     width: 100%;
     background: white;
-    padding: 20px 0 10px 10px;
-    border-radius: 5px;
-    box-shadow: 3px 4px 5px #888888;
     text-align: left;
     box-sizing: border-box;
+    padding:0 20px;
+}
+dl{
+    border-bottom: 1px dotted #ccc;
+    padding-bottom: 20px;
 }
 .about-me,
 .about-blog{
-    width: 95%;
+    width: 98%;
     font-size: 20px;
-    font-weight: bold;
-    padding: 10px 20px;
-    border-bottom: 1px solid #b9b9b9;
-    margin:0px 0px 20px 0px;
+    text-align: center;
+    padding:20px 0 10px;
+    border-bottom: 1px solid #787999;
     box-sizing: border-box;
+    margin-bottom: 20px;
 }
-.blog-discript p{
-    margin: 10px 0px 10px 20px;
+dl dd{
+    font-size: 14px;
+    color:#787977;
+    line-height: 30px;
+
 }
+.main{
+    margin-bottom: 20px;
+}
+
 /*博客评论*/
+
 .blog-comments{
     width: 100%;
-    /*background: pink;*/
-    margin-top: 30px;
     text-align: left;
-
+    background: white;
 }
 .blog-comment-msg{
     display: inline-block;
-    margin: 20px 0px 10px 30px;
-    font-weight: bold;
+    width: 100%;
+    margin-top: 15px;
+    box-sizing: border-box;
+    padding: 0px 20px 15px;
+    font-size: 14px;
+    border-bottom: 1px dotted #787977;
 }
+
 .blog-comment{
-    margin: 0px 0 10px 0px;
-    border: 1px dashed #7ca4c1;
-    padding: 10px 0 10px 20px;
-    background: #d9edf7;
-    border-radius: 5px;
-    box-shadow: -3px 4px 5px #eeeeee;
+    padding: 10px 20px 0px;
+    line-height: 30px;
+    border-bottom: 1px dotted #787977;
+    color: #515250;
 }
-.blog-comment div{
-    padding: 10px 0 10px 0;
+.blog-comment b{
+    color:#01aaed;
+}
+.blog-comment .c-reply{
+    color:#009688;
+    font-size: 13px;
+    cursor: pointer;
+}
+.blog-comments #more{
+    width: 100%;
+    box-sizing: border-box;
+    height: 45px;
+    line-height: 40px;
+    font-size: 14px;
+    color:#999;
+    text-align: center;
+    cursor: pointer;
 }

@@ -1,4 +1,4 @@
-
+//格式化返回结果
 function writeReslut(status,msg,data){
     return JSON.stringify({
         status:status,

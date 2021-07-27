@@ -1,0 +1,141 @@
+.content-left{
+    box-sizing:border-box;
+    border-radius: 3px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+#blog-detail {
+    width:100%;
+    background:#ffffff;
+}
+#blog-detail>p{
+    box-sizing: border-box;
+    padding-left: 20px;
+    line-height: 30px;
+}
+.content-left p.blog-title{
+    padding-top: 20px;
+    font-size: 16px;
+    color: #787977;
+    text-align: center;
+}
+.content-left p.introduce{
+    color: #987897;
+}
+p.introduce span{
+    margin-right: 30px;
+}
+
+.content-left .blog-content{
+    width: 100%;
+    background:#fff;
+    color: #515250;
+    font-size: 14px;
+    line-height: 24px;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+
+
+/*评论面板*/
+.comment-panel{
+    margin-top:30px;
+    background:#fff;
+    padding: 20px;
+}
+.comment-panel .c-title{
+    font-size: 15px;
+}
+.comment-panel .p-item{
+    margin-top: 15px;
+    line-height: 30px;
+}
+.comment-panel .p-item input{
+    outline: none;
+    border:1px solid #d8d8d8;
+    height: 25px;
+    text-indent: 10px;
+    font-size: 13px;
+    margin-right: 20px;
+}
+.comment-content #c-content{
+    width:600px;
+    height: 200px;
+    font-family: "weiruanyahei";
+    border:1px solid #d8d8d8;
+    outline: none;
+    color:#787977;
+    line-height: 20px;
+    padding:10px;
+}
+#comment-panel .test-code .code-name{
+    font-size: 14px;
+}
+#comment-panel .test-code{
+    /*line-height: 48px;*/
+    vertical-align: center;
+    width: 280px;
+}
+.test-code input#vcode{
+    width: 100px;
+    height: 34px;
+}
+#code-number{
+    display: inline-block;
+    height: 34px;
+    border:1px solid #ccc;
+    float:right;
+}
+#submit{
+    width:90px;
+    height: 40px;
+    background: #009688;
+    outline: none;
+    border:none;
+    border-radius: 3px;
+    color:white;
+    font-size: 15px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+
+/*留言展示*/
+.blog-comments{
+    width: 100%;
+    text-align: left;
+    background: white;
+}
+.blog-comment-msg{
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0px 20px 15px;
+    font-size: 14px;
+    border-bottom: 1px dotted #787977;
+}
+
+.blog-comment{
+    padding: 10px 20px 0px;
+    line-height: 30px;
+    border-bottom: 1px dotted #787977;
+    color: #515250;
+}
+.blog-comment b{
+    color:#01aaed;
+}
+.blog-comment .c-reply{
+    color:#009688;
+    font-size: 13px;
+    cursor: pointer;
+}
+.blog-comments #more{
+    width: 100%;
+    box-sizing: border-box;
+    height: 45px;
+    line-height: 40px;
+    font-size: 14px;
+    color:#999;
+    text-align: center;
+}

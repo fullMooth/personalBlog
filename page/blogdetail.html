@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>博客首页</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/blogdetail.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./js/axios.js"></script>
+</head>
+<body>
+<div class="header">
+    <div class="container">
+        <a href="" class="title">我的个人博客  | 技术博客</a>
+        <div class="search">
+            <input type="text" placeholder="请输入内容">
+            <button>搜索</button>
+        </div>
+        <ul class="nav">
+            <li><a href="">首页</a></li>
+            <li><a href="sitemap.html">地图</a></li>
+            <li><a href="about.html">关于</a></li>
+            <li><a href="guestbook.html">留言</a></li>
+        </ul>
+
+    </div>
+
+</div>
+<div class="main">
+    <div class="content">
+        <div class="content-left">
+            <div class="blog" id="blog-detail">
+                <p class="blog-title">{{title}}</p>
+                <p class="introduce">作者：<span>sunny</span>标签：<span>{{tags}}</span>发表日期：<span>{{ctime}}</span> 浏览次数：<span>{{views}}</span></p>
+                <div class="blog-content" v-html="content">
+
+                </div>
+            </div>
+
+            <!-- 评论区域 -->
+            <div class="comment-panel" id="comment-panel" >
+                <p class="c-title p-item">发表评论</p>
+                <div class="userinfo p-item">
+                    <input type="hidden" value="-1" id="replay">
+                    <input type="text" placeholder="请输入昵称" id="u-name">
+                    <input type="text" placeholder="请输入你的邮箱" id="email">
+                </div>
+                <div class="comment-content p-item">
+                    <textarea type="text" placeholder="如果不是没有意义的问题我将不会回复..." id="c-content">
+
+                    </textarea>
+                </div>
+                <div class="test-code p-item">
+                    <span class="code-name">验证码：</span><input type="text" id="vcode" v-model="codeText">
+                    <span @click="updateCode" v-html="codeContent" id="code-number"></span>
+                </div>
+                <button @click="postComment" id="submit">提交留言</button>
+            </div>
+            <div class="blog-comments" id="blog-comments">
+                <span class="blog-comment-msg">目前有66条留言</span>
+                <div class="blog-comment" v-for="elem in comments">
+                    <span><b>{{elem.name}}</b>{{elem.options}}</span>
+                    <div>{{elem.content}}</div>
+                    <p> {{elem.date}} <span class="c-reply" @click="reply(elem.id,elem.name)">[回复]</span></p>
+                </div>
+                <div id="more">没有更多了</div>
+            </div>
+        </div>
+        <div class="content-right">
+            <div class="right-module" id="random-tags" >
+                <div class="random-tags" >随街标签云</div>
+                <a href="" v-for="tag in tags" :style="{color:randomColor(),fontSize:randomSize}">{{tag}} &nbsp;</a>
+
+            </div>
+            <div class="right-module" id="new-hot">
+                <div class="random-tags">最近热门</div>
+                <div v-for="newHot in hotList"><a :href="newHot.links" >{{newHot.title}}</a></div>
+
+            </div>
+            <div class="right-module" id="new-comment">
+                <div class="random-tags">最新评论</div>
+                <ul>
+                    <li v-for="newCon in commentList">
+                        <div class="user-name">
+                            <span>{{newCon.name}}</span>
+                            <span class="comm-time">{{newCon.date}}</span>
+                        </div>
+                        <div class="user-comments">{{newCon.content}}</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="right-module">
+                <div class="random-tags">友情链接</div>
+                <span class="link"><a href="">请点击这里</a></span>
+                <span class="link"><a href="">请点击这里</a></span>
+                <span class="link"><a href="">请点击这里</a></span>
+                <span class="link"><a href="">请点击这里</a></span>
+                <span class="link"><a href="">请点击这里</a></span>
+                <span class="link"><a href="">请点击这里</a></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="other_link S_bg1 clearfix T_add_ser">
+
+        <p class="copy_v2"><a target="_blank" href="http://www.beian.miit.gov.cn" class="S_txt2">京ICP证100780号</a><span class="S_txt2">互联网药品信息服务(京)-非经营性-2015-0110</span><span class="S_txt2">京网文[2017]10291-1172号</span><a target="_blank" href="http://www.beian.miit.gov.cn" class="S_txt2">京ICP备12002058号</a><span class="S_txt2">增值电信业务经营许可证B2-20140447</span><span class="S_txt2">乙测资字1111805</span></p>
+        <p class="copy_v2"><a target="_blank" href="https://www.12377.cn/" class="S_txt2">中国互联网举报中心</a><a target="_blank" href="http://www.bjjubao.org/" class="S_txt2">北京互联网举报中心</a><a target="_blank" href="http://www.cyberpolice.cn/wfjb/" class="S_txt2">网络110报警服务</a><a target="_blank" href="http://whzf.beijing.gov.cn/" class="S_txt2">北京文化市场举报热线</a><a target="_blank" href="http://www.itrust.org.cn/" class="S_txt2">中国互联网协会</a><a target="_blank" href="http://www.bnia.cn/" class="S_txt2">北京网络行业协会</a><a target="_blank" href="http://www.shdf.gov.cn/shdf/channels/740.html" class="S_txt2">扫黄打非举报入口</a></p>
+        <p class="company"><span class="S_txt2">互联网新闻信息服务许可编号:11220190001</span><span class="S_txt2">广播电视节目制作经营许可证（京）字第04005号</span><span class="copy S_txt2">Copyright © 2009-2020 WEIBO <a class="S_txt2" target="_blank" href="//weibo.com/aj/static/business_license.html?_wv=6">北京微梦创科网络技术有限公司</a></span><span><a class="S_txt2" target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11000002000019"><i class="icon_netsecurity"></i>京公网安备11000002000019号</a></span></p>
+    </div>
+    <p>@2020-2-20 内容由作者及游客提供</p>
+</div>
+
+<!--    <script src="./js/vue.js"></script>-->
+<script src="./js/index.js"></script>
+<script src="./js/blogDetail.js"></script>
+<script src="./js/rightCom.js"></script>
+</body>
+</html>
